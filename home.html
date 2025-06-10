@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simulador de Investimentos Emocionais</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+  }
+  h1 {
+    text-align: center;
+  }
+  .stock-list {
+    margin-bottom: 15px;
+  }
+  .stock-item {
+    margin: 5px 0;
+  }
+  label {
+    display: inline-block;
+    width: 100px;
+  }
+  select, input[type=number] {
+    padding: 5px;
+    width: 150px;
+  }
+  button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+  .message {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  .portfolio, .cash, .net-worth, .day, .emotion {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Stocks Simulator Based on Emotions</h1>
+
+<div class="day"></div>
+<div class="emotion"></div>
+
+<div class="stock-list">
+  <h3>Stock Prices</h3>
+  <div id="stocks"></div>
+</div>
+
+<div class="cash"></div>
+<div class="portfolio"></div>
+<div class="net-worth"></div>
+
+<hr />
+
+<form id="actionForm">
+  <label for="action">Action:</label>
+  <select id="action" name="action">
+    <option value="Skip">Skip</option>
+    <option value="Buy">Buy</option>
+    <option value="Sell">Sell</option>
+  </select><br/><br/>
+
+  <label for="stock">Ação:</label>
+  <select id="stock" name="stock">
+  </select><br/><br/>
+
+  <label for="amount">Quantidade:</label>
+  <input type="number" id="amount" name="amount" min="1" /><br/><br/>
+
+  <button type="submit">Confirmar Ação</button>
+</form>
+
+<div class="message" id="message"></div>
+
+
+
+</body>
+</html>
+<script>
+  // Initialize the game on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    nextDay();
+  });

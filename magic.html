@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Market Simulator</title>
+  <link rel="stylesheet" href="magic.css">
+</head>
+<body>
+  <h1>📈 Stock Market Simulator</h1>
+
+  <section id="stocks-section">
+    <h2>Market Prices</h2>
+    <table id="stocks-table">
+      <thead>
+        <tr>
+          <th>Stock</th>
+          <th>Price</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="portfolio-section">
+    <h2>Portfolio</h2>
+    <p id="cash-display"></p>
+    <table id="portfolio-table">
+      <thead>
+        <tr>
+          <th>Stock</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="actions">
+    <h2>Trade</h2>
+    <input id="stock-name" placeholder="Stock symbol (e.g., AAPL)">
+    <input id="stock-quantity" type="number" placeholder="Quantity">
+    <button onclick="buy()">Buy</button>
+    <button onclick="sell()">Sell</button>
+  </section>
+
+  <script src="magic.js"></script>
+</body>
+</html>
